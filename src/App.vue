@@ -1,26 +1,38 @@
+<!-- App.vue -->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <div class="container">
+      <NavigationBase :stories="stories" />
+      <router-view :stories="stories" />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavigationBase from '@/components/NavigationBase.vue';
+import { storiesData } from '@/js/storiesData';  // Adjust the path based on your project structure
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    NavigationBase,
+  },
+  data() {
+    return {
+      stories: storiesData,
+    };
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  justify-content: left;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px; /* Adjust as needed */
+  width: 100%;
 }
 </style>
