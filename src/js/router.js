@@ -3,7 +3,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import StoriesList from '@/components/StoriesList.vue'
 
 const routes = [
-    //{ path: '/', name: 'home', component: StoriesList, props: { stories: storiesData } },
+    { path: '/', component: StoriesList },
     { path: '/:id', name: 'story', component: StoriesList, props: true },
   ];
 

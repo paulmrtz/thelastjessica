@@ -1,9 +1,13 @@
 <!-- StoryItem.vue -->
 <template>
   <div class="story">
-    <h2 class="global-title">{{ story.title }}</h2>
-    <img :src="require(`@/${story.image}`)" alt="Story Image" class="story-image" />
+    <div class="d-flex align-items-center justify-content-center">
+      <h2 class="global-title">{{ story.title }}</h2>
+    </div>
     <p class="global-text">{{ story.text }}</p>
+    <div class="d-flex align-items-center justify-content-center">
+      <img :src="require(`@/images/${story.image}`)" alt="Story Image" class="story-image" />
+    </div>
   </div>
 </template>
 
