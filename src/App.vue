@@ -2,8 +2,14 @@
 <template>
   <div id="app">
     <div class="container">
-      <NavigationBase :stories="stories" />
-      <router-view :stories="stories" />
+      <aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-3 mb-xl-5 px-2">
+        <NavigationBase :stories="stories" />
+      </aside>
+      <div class="b-example-divider b-example-vr">
+      </div>
+      <div class="routerview">
+        <router-view :stories="stories" />
+      </div>
     </div>
   </div>
 </template>
@@ -25,14 +31,7 @@ export default {
 </script>
 
 <style>
-#app {
+.app {
   display: flex;
-  justify-content: left;
-}
-
-.container {
-  display: flex;
-  max-width: 1200px; /* Adjust as needed */
-  width: 100%;
 }
 </style>

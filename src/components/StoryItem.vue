@@ -1,9 +1,9 @@
 <!-- StoryItem.vue -->
 <template>
   <div class="story">
-    <h2>{{ story.title }}</h2>
-    <img :src="require(`@/${story.image}`)" alt="Story Image" />
-    <p>{{ story.text }}</p>
+    <h2 class="global-title">{{ story.title }}</h2>
+    <img :src="require(`@/${story.image}`)" alt="Story Image" class="story-image" />
+    <p class="global-text">{{ story.text }}</p>
   </div>
 </template>
 
@@ -19,5 +19,13 @@ export default {
 </script>
 
 <style scoped>
-/* Add your custom styles for the story content */
+.story {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.story-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px; /* Adjust as needed */
+}
 </style>

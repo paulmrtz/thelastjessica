@@ -1,11 +1,16 @@
 <!-- NavigationBase.vue -->
 <template>
-    <div class="quick-links">
-      <router-link v-for="story in stories" :key="story.id" :to="{ name: 'story', params: { id: story.id } }">
-        {{ story.title }}
-      </router-link>
-    </div>
-  </template>
+  <nav class="small">
+      <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse" aria-controls="contents-collapse">Contents</button>
+      <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+        <li v-for="story in stories" :key="story.id" class="custom-link">
+          <router-link :to="{ name: 'story', params: { id: story.id } }" class="d-inline-flex align-items-center rounded text-decoration-none">
+            {{ story.title }}
+          </router-link>
+        </li>
+      </ul>
+  </nav>
+</template>
 
 <script>
 import { storiesData } from '@/js/storiesData';  // Adjust the path based on your project structure
@@ -18,12 +23,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.quick-links {
-  display: flex;
-  flex-direction: column;  /* Display links vertically */
-  margin-right: 20px;     /* Adjust the margin as needed for separation */
-  cursor: pointer;
-}
-</style>
